@@ -1,17 +1,20 @@
 # Getting Started With Kpack
 
+Getting ready to get your toes wet with kpack but intimidated about where and how to start? This repo has you covered! We're currently configured to work with kpack release 0.0.8 but we'll try and keep up to date with releases as they come out. 
+
 ## Resources
 
 * kpack release
   * https://github.com/pivotal/kpack/releases
     * release.yaml
     * logs
+      * You need this utility in your path top easily view logs from the builds.
 * kpack install
   * https://github.com/pivotal/kpack/blob/master/docs/install.md
 * kpack tutorial
   * https://github.com/pivotal/kpack/blob/master/docs/tutorial.md
 * A default [storage class](https://kubernetes.io/docs/concepts/storage/storage-classes/)
-
+  * we need this to dynamically provision volumes
 
 ## Goals
 
