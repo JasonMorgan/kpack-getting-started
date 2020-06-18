@@ -2,13 +2,17 @@
 
 cd ~/kpack
 
-k apply -f kpack-0.0.8.yaml
+curl -Lo logs.tgz https://github.com/pivotal/kpack/releases/download/v0.0.9/logs-v0.0.9-linux.tgz
+curl -L https://github.com/pivotal/kpack/releases/download/v0.0.9/release-0.0.9.yaml > kpack-0.0.9.yaml
+
+k apply -f kpack-0.0.9.yaml
 k apply -f cluster-builder.yaml
 k api-resources --api-group build.pivotal.io
 k get builders,builds,clusterbuilders,images,sourceresolvers --all-namespaces
 k apply -f .priv/
 k apply -f image.yaml
-logs -image tutorial-image -namespace kpack
+logs -image tutorial-image
+docker pull jasonmorgan/tutorial-image
 docker inspect jasonmorgan/tutorial-image | jq '.[].Config.Labels."io.buildpacks.lifecycle.metadata" | fromjson | .buildpacks'
 
 ## New tab
