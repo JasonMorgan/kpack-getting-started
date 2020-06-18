@@ -11,11 +11,11 @@ kind: Stack
 metadata:
   name: bionic-stack
 spec:
-  id: "io.buildpacks.stacks.bionic"
+  id: "org.cloudfoundry.stacks.cflinuxfs3"
   buildImage:
-    image: "cloudfoundry/build:0.0.10-base-cnb"
+    image: "paketobuildpacks/build:0.0.63-full-cnb-cf"
   runImage:
-    image: "cloudfoundry/run:0.0.11-base-cnb"
+    image: "paketobuildpacks/run:0.0.64-full-cnb-cf"
 ---
 apiVersion: experimental.kpack.pivotal.io/v1alpha1
 kind: CustomBuilder
@@ -28,31 +28,8 @@ spec:
   store: bionic-store
   order:
   - group:
-    - id: org.cloudfoundry.openjdk
-    - id: org.cloudfoundry.buildsystem
-      optional: true
-    - id: org.cloudfoundry.jvmapplication
-    - id: org.cloudfoundry.tomcat                       
-      optional: true
-    - id: org.cloudfoundry.springboot                   
-      optional: true
-    - id: org.cloudfoundry.distzip                      
-      optional: true
-    - id: org.cloudfoundry.procfile                     
-      optional: true
-    - id: org.cloudfoundry.azureapplicationinsights     
-      optional: true
-    - id: org.cloudfoundry.debug                        
-      optional: true
-    - id: org.cloudfoundry.googlestackdriver            
-      optional: true
-    - id: org.cloudfoundry.jdbc                         
-      optional: true
-    - id: org.cloudfoundry.jmx                          
-      optional: true
-    - id: org.cloudfoundry.springautoreconfiguration    
-      optional: true
+    - id: paketo-buildpacks/java
   - group:
-    - id: org.cloudfoundry.go
+    - id:  paketo-buildpacks/go
     
 

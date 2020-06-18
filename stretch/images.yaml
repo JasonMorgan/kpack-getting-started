@@ -2,9 +2,9 @@
 apiVersion: build.pivotal.io/v1alpha1
 kind: Image
 metadata:
-  name: pas-golang-redis
+  name: golang-redis
 spec:
-  tag: index.docker.io/jasonmorgan/pas-golang-redis
+  tag: index.docker.io/jasonmorgan/golang-redis
   serviceAccount: jason-hub
   cacheSize: "1.5Gi"
   builder:
@@ -18,9 +18,9 @@ spec:
 apiVersion: build.pivotal.io/v1alpha1
 kind: Image
 metadata:
-  name: pas-golang-mysql
+  name: golang-mysql
 spec:
-  tag: index.docker.io/jasonmorgan/pas-golang-mysql
+  tag: index.docker.io/jasonmorgan/golang-mysql
   serviceAccount: jason-hub
   cacheSize: "1.5Gi"
   builder:
@@ -29,20 +29,4 @@ spec:
   source:
     git:
       url: https://github.com/techgnosis/pas-golang-mysql.git
-      revision: master
----
-apiVersion: build.pivotal.io/v1alpha1
-kind: Image
-metadata:
-  name: kpack-spring-petclinic
-spec:
-  tag: jasonmorgan/kpack-spring-petclinic
-  serviceAccount: jason-hub
-  cacheSize: "2Gi"
-  builder:
-    name: my-custom-builder
-    kind: CustomBuilder
-  source:
-    git:
-      url: https://github.com/jasonmorgan/spring-petclinic
       revision: master
