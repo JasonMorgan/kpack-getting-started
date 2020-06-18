@@ -1,6 +1,9 @@
 #!/bin/bash
 
-cd ~/kpack
+cd kpack-getting-started
+
+### Warning!!! Before you can use kpack you need to have a default storage class for kubernetes
+#### In the demo environments kpack and docker-for-desktop have default storage classes out of the box
 
 curl -Lo logs.tgz https://github.com/pivotal/kpack/releases/download/v0.0.9/logs-v0.0.9-linux.tgz
 curl -L https://github.com/pivotal/kpack/releases/download/v0.0.9/release-0.0.9.yaml > kpack-0.0.9.yaml
