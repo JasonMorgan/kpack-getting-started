@@ -28,8 +28,6 @@ spec:
   store: bionic-store
   order:
   - group:
-    - id: paketo-buildpacks/java
-  - group:
     - id:  paketo-buildpacks/go
     
 
