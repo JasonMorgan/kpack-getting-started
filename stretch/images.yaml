@@ -2,13 +2,13 @@
 apiVersion: build.pivotal.io/v1alpha1
 kind: Image
 metadata:
-  name: golang-redis
+  name: golang-hello-world
 spec:
   tag: index.docker.io/jasonmorgan/golang-redis
   serviceAccount: jason-hub
   cacheSize: "1.5Gi"
   builder:
-    name: my-custom-builder
+    name: 59s-custom-builder
     kind: CustomBuilder
   source:
     git:
@@ -18,15 +18,15 @@ spec:
 apiVersion: build.pivotal.io/v1alpha1
 kind: Image
 metadata:
-  name: golang-mysql
+  name: spring-petclinic
 spec:
-  tag: index.docker.io/jasonmorgan/golang-mysql
+  tag: index.docker.io/jasonmorgan/spring-petclinic
   serviceAccount: jason-hub
   cacheSize: "1.5Gi"
   builder:
-    name: my-custom-builder
+    name: 59s-custom-builder
     kind: CustomBuilder
   source:
     git:
-      url: https://github.com/techgnosis/pas-golang-mysql.git
+      url: https://github.com/jasonmorgan/spring-petclinic.git
       revision: master

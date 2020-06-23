@@ -4,7 +4,7 @@ metadata:
   name: bionic-store
 spec:
   sources:
-  - image: cloudfoundry/cnb:bionic
+  - image: gcr.io/paketo-buildpacks/builder:full-cf
 ---
 apiVersion: experimental.kpack.pivotal.io/v1alpha1
 kind: Stack
@@ -20,7 +20,7 @@ spec:
 apiVersion: experimental.kpack.pivotal.io/v1alpha1
 kind: CustomBuilder
 metadata:
-  name: my-custom-builder
+  name: 59s-custom-builder
 spec:
   tag: jasonmorgan/custom-builder
   serviceAccount: jason-hub
@@ -29,5 +29,7 @@ spec:
   order:
   - group:
     - id:  paketo-buildpacks/go
+  - group:
+    - id:  paketo-buildpacks/java
     
 
