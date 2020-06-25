@@ -4,7 +4,7 @@ metadata:
   name: bionic-store
 spec:
   sources:
-  - image: gcr.io/paketo-buildpacks/builder:full-cf
+  - image: gcr.io/paketo-buildpacks/builder:base
 ---
 apiVersion: experimental.kpack.pivotal.io/v1alpha1
 kind: Stack
@@ -13,9 +13,9 @@ metadata:
 spec:
   id: "org.cloudfoundry.stacks.cflinuxfs3"
   buildImage:
-    image: "paketobuildpacks/build:0.0.63-full-cnb-cf"
+    image: "paketobuildpacks/build:0.0.19-base-cnb"
   runImage:
-    image: "paketobuildpacks/run:0.0.64-full-cnb-cf"
+    image: "paketobuildpacks/run:0.0.19-base-cnb"
 ---
 apiVersion: experimental.kpack.pivotal.io/v1alpha1
 kind: CustomBuilder
